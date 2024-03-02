@@ -14,13 +14,22 @@ class VolFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
-    {
+    public function definition(){
+
+
+    
+ 
+    $airportDepartId = Airport::all()->random()->id;
         return [
-            "airport_depart_id" => Airport::all()->random()->id,
-            "airport_arrivee_id" => Airport::all()->random()->id,
+              
+
+            "airport_depart_id"=>$airportDepartId,
+            "airport_arrivee_id" => Airport::where("id", "!=" ,$airportDepartId),
             'date_depart'=> fake()->date(),
             'date_arrivee'=> fake()->date()
         ];
-    }
+    
+}
+
+
 }

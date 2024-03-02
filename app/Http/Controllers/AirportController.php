@@ -14,7 +14,7 @@ class AirportController extends Controller
     public function index()
     {
         $airports = Airport::all();
-        return view('index', compact('airports'));
+        return view('/pages.airports', compact('airports'));
     }
 
     /**
@@ -62,6 +62,6 @@ class AirportController extends Controller
      */
     public function destroy(Airport $airport)
     {
-        //
+     
     }
 }

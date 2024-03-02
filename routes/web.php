@@ -11,13 +11,21 @@
 |
 */
 
+use App\Http\Controllers\AfficheForm;
 use App\Http\Controllers\AirportController;
+use App\Http\Controllers\Avioncontrol;
+use App\Http\Controllers\FormAvionsController;
+use App\Http\Controllers\HomeControl;
 use App\Models\Airport;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', [AirportController::class,'index']);
-
+Route::get('/', [HomeControl::class,'index']);
+Route::get('/airports', [AirportController::class,'index']);
+Route::get('/formulair',[AfficheForm::class,'index'])->name('formulair.index');
+Route::post('/insertAvion',[FormAvionsController::class,'create']);
+Route::get('/avions' ,[Avioncontrol::class ,'index']);
+Route::delete('/avions/{id}', [FormAvionsController::class, 'delete'])->name('avions.delete');
 Route::get('/vol/{id}', function($id){
     return Airport::findById($id)->volsDepart();
 });
