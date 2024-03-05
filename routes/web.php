@@ -22,6 +22,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeControl::class,'index']);
 Route::get('/airports', [AirportController::class,'index']);
+Route::get('/airports/{id}', [AirportController::class, 'show'])
+    ->where('id', '\d+') 
+    ->name('airports.show');
+
 Route::get('/formulair',[AfficheForm::class,'index'])->name('formulair.index');
 Route::post('/insertAvion',[FormAvionsController::class,'create']);
 Route::get('/avions' ,[Avioncontrol::class ,'index']);

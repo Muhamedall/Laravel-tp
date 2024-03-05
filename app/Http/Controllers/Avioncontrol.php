@@ -8,6 +8,6 @@ class Avioncontrol extends Controller
 {
     public function index(){
         $avions=Avion::all();
-        return view('pages.avions' , compact('avions'));
+        return view('components.avions' , compact('avions'));
     }
 }

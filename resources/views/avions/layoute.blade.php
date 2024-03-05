@@ -12,7 +12,7 @@
     @include('pages.nav')
     
     <main>
-        <div class="m-3">
+        <div class="container m-3">
             @yield('content')
         </div>
         
