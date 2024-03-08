@@ -17,7 +17,7 @@
             <a class="nav-item nav-link fs-5 " href="/">Acuueil </a>
             <a class="nav-item nav-link fs-5" href="/avions">Avions</a>
             <a class="nav-item nav-link fs-5" href="/airports">Airports</a>
-            <a class="nav-item nav-link fs-5 " href="/vol">Voles</a>
+            <a class="nav-item nav-link fs-5 " href="/voles">Voles</a>
           </div>
         </div>
       </nav>

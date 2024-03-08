@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Vol;
 use App\Http\Requests\StoreVolRequest;
 use App\Http\Requests\UpdateVolRequest;
-
+use Illuminate\Http\Request;
 class VolController extends Controller
 {
     /**
@@ -13,7 +13,8 @@ class VolController extends Controller
      */
     public function index()
     {
-        //
+        $voles=Vol::paginate(10);
+        return view('pages.voles', compact('voles'));
     }
 
     /**
@@ -35,9 +36,12 @@ class VolController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Vol $vol)
+    public function show(Request $request)
     {
-        //
+        
+        $id = (int)$request->id;
+        $volles=Vol::findOrFail($id);
+         return view('pages.showVoles' ,compact('volles'));
     }
 
     /**
